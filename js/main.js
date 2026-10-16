@@ -37,10 +37,6 @@
     bg.style.clipPath = 'inset(0 round ' + (16 * k).toFixed(1) + 'px)';
     bg.style.filter = 'brightness(' + (0.8 + 0.2 * e).toFixed(3) + ')';
     shade.style.opacity = (1 - 0.15 * e).toFixed(3);
-    var out = Math.max(0, (y - span * 0.75) / (span * 0.25));
-    content.style.opacity = (1 - Math.min(1, out)).toFixed(3);
-    content.style.transform = 'translateY(' + (-30 * out).toFixed(1) + 'px) scale(' + (1 - 0.04 * out).toFixed(4) + ')';
-    vf.style.opacity = p > 0.97 ? Math.max(0, 1 - out * 1.2) : 1;
     var locked = p > 0.95;
     vf.classList.toggle('is-locked', locked);
     vfFocus.textContent = locked ? 'IN FRAME' : 'OUT OF FRAME';
