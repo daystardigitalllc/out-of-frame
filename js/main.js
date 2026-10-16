@@ -9,7 +9,7 @@
   $('#yr').textContent = new Date().getFullYear();
   var dep = $('#depositBtn');
   if (C.depositUrl) { dep.href = C.depositUrl; }
-  else { dep.textContent = 'Call To Reserve'; dep.href = C.phoneHref; dep.removeAttribute('target'); }
+  else { dep.textContent = 'Call to reserve'; dep.href = C.phoneHref; dep.removeAttribute('target'); }
 
   // ---- Nav
   var nav = $('#nav'), toggle = $('#navToggle');

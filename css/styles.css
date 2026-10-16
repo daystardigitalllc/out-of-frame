@@ -124,8 +124,6 @@ a{color:inherit;text-decoration:none}
 .book{background:var(--bg2);border-block:1px solid var(--line)}
 .book__grid{display:grid;grid-template-columns:5fr 6fr;gap:clamp(32px,6vw,88px);align-items:start}
 .book__intro .lead{color:var(--mute);max-width:34ch;margin-top:1.2rem}
-.book__cards{display:grid;gap:16px;margin-top:2rem}
-.mini{border:1px solid var(--line);padding:20px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
 .book__loc{margin-top:1.6rem;color:var(--mute)}.book__loc a{color:var(--gold2)}
 .form{display:grid;gap:18px}
 .form__row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
@@ -136,6 +134,7 @@ a{color:inherit;text-decoration:none}
 .form input.err{border-color:#e0463b}
 .hp{position:absolute;left:-9999px}
 .form .btn{justify-self:start;margin-top:6px}
+.form__deposit{color:var(--mute)}.form__deposit a{color:var(--gold2);border-bottom:1px solid var(--gold)}
 .form__status{color:var(--gold2);min-height:1.4em}
 
 /* FAQ */
