@@ -1,4 +1,4 @@
-// ===== OUT OF FRAME — site settings. Edit this file; no other code changes needed. =====
+// ===== OUT OF FRAME - site settings. Edit this file; no other code changes needed. =====
 window.OOF = {
   phone: "615-686-7495",
   phoneHref: "tel:+16156867495",

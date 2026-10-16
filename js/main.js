@@ -107,7 +107,7 @@
     if (C.formspreeId) {
       status.textContent = 'Sending…';
       fetch('https://formspree.io/f/' + C.formspreeId, { method: 'POST', body: data, headers: { Accept: 'application/json' } })
-        .then(function (r) { if (!r.ok) throw 0; form.reset(); status.textContent = 'Thank you — we received your inquiry and will be in touch very soon.'; })
+        .then(function (r) { if (!r.ok) throw 0; form.reset(); status.textContent = 'Thank you - we received your inquiry and will be in touch very soon.'; })
         .catch(function () { status.textContent = 'Something went wrong. Please call ' + C.phone + ' or email ' + C.email + '.'; });
     } else {
       var body = ['Name: ' + data.get('name'), 'Email: ' + data.get('email'), 'Phone: ' + data.get('phone'),

@@ -1,6 +1,6 @@
 # Out of Frame
 
-Static website for **Out of Frame** — independent wedding film & post-production studio, Springfield, TN.
+Static website for **Out of Frame**: independent wedding film & post-production studio, Springfield, TN.
 Plain HTML/CSS/JS, no build step. Works on GitHub Pages, Netlify, Cloudflare Pages, or any host.
 
 ## Edit settings
