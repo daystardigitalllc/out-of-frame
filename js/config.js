@@ -10,9 +10,10 @@ window.OOF = {
 
   // Hero background loop: the clips cycle (seconds into the video)
   heroSegments: [
-    { start: 45,  end: 70 },
-    { start: 150, end: 175 },
-    { start: 300, end: 325 }
+    { start: 5,   end: 10  },   // 0:05–0:10
+    { start: 121, end: 126 },   // 2:01–2:06
+    { start: 245, end: 250 },   // 4:05–4:10
+    { start: 355, end: 360 }    // 5:55–6:00
   ],
 
   // Highlight reel tiles (seconds into the video)
