@@ -70,7 +70,7 @@
       if (en.isIntersecting) { var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); } else v.pause();
     });
   }, { threshold: .15 });
-  document.querySelectorAll('.reel__tile, .svc__clip').forEach(function (el) { vio.observe(el); });
+  document.querySelectorAll('.reel__tile, .svc__clip, .name__media').forEach(function (el) { vio.observe(el); });
 
   // ---- Closing section: same out-of-frame entrance as the hero, driven by scroll position
   var closing = $('#closing'), cbg = closing.querySelector('.closing__bg'), cv = cbg.querySelector('video'), cin = closing.querySelector('.closing__inner');
