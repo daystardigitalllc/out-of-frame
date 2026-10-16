@@ -2,7 +2,7 @@
 window.OOF = {
   phone: "615-686-7495",
   phoneHref: "tel:+16156867495",
-  email: "Dan@outofframemedia.com",
+  email: "Dan@outofframestudios.com",
   location: "Springfield, TN",
 
   // YouTube source video
@@ -17,7 +17,7 @@ window.OOF = {
     { title: "The Celebration", src: "video/clip3.mp4", poster: "video/clip3.jpg", start: 349 }
   ],
 
-  // Contact form: with no id set, the form opens an email to Dan@outofframemedia.com instead.
+  // Contact form: with no id set, the form opens an email to Dan@outofframestudios.com instead.
   // For direct delivery, create a free form at https://formspree.io and paste the form id (the part after /f/)
   formspreeId: "",
 

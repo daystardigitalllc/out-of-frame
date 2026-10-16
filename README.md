@@ -9,7 +9,7 @@ Everything configurable lives in [`js/config.js`](js/config.js):
 | Setting | What it does |
 |---|---|
 | `reel` | Highlight tiles (preview files in `video/`, plus where the full YouTube film starts when clicked) |
-| `formspreeId` | Free form id from formspree.io → inquiries email straight to Dan. Empty = form opens an email to Dan@outofframemedia.com |
+| `formspreeId` | Free form id from formspree.io → inquiries email straight to Dan. Empty = form opens an email to Dan@outofframestudios.com |
 | `depositUrl` | Stripe **Payment Link** for deposits. Empty = button becomes "Call To Reserve" |
 
 ## Run locally
