@@ -96,6 +96,19 @@ a{color:inherit;text-decoration:none}
 .name__text em{font-style:italic;color:var(--gold2)}
 .name__close{margin-top:1.4rem;color:var(--gold2);font-size:1.1rem}
 
+/* About page */
+.about{padding-top:clamp(120px,14vw,170px)}
+.about__grid{display:grid;grid-template-columns:6fr 5fr;gap:clamp(32px,6vw,88px);align-items:center}
+.about__photo img{width:100%;height:auto;filter:var(--photo-filter)}
+.about__photo figcaption{margin-top:.8rem;font-size:.9rem;color:var(--mute)}
+.about__copy p{color:#c4bdb1;margin-bottom:1rem;max-width:46ch}
+.about__copy .lead{font-family:var(--serif);font-size:clamp(1.6rem,2.4vw,2.1rem);line-height:1.25;color:var(--ink);margin:1.2rem 0 1.4rem}
+.about-craft{background:var(--bg2);border-top:1px solid var(--line)}
+.about-craft__grid{display:grid;grid-template-columns:5fr 6fr;gap:clamp(32px,6vw,88px);align-items:start}
+.about-craft__body p{color:#c4bdb1;margin-bottom:1rem;max-width:46ch}
+.about-craft__body .about-craft__close{color:var(--gold2);font-family:var(--serif);font-style:italic;font-size:1.5rem;line-height:1.3;margin-top:1.4rem}
+.about-craft__ctas{justify-content:flex-start;margin-top:1.8rem}
+
 /* Services: one image-led feature, two plain text rows */
 .services{background:var(--bg2)}
 .svc{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(24px,5vw,72px);align-items:stretch}
@@ -201,7 +214,7 @@ a{color:inherit;text-decoration:none}
   .nav__cta{display:none}
   .nav__links{position:fixed;inset:0;background:var(--bg);flex-direction:column;justify-content:center;gap:26px;font-size:1.3rem;opacity:0;pointer-events:none;transition:opacity .3s;margin:0}
   .nav.open .nav__links{opacity:1;pointer-events:auto}
-  .story__grid,.book__grid,.faq__grid,.svc{grid-template-columns:1fr}
+  .story__grid,.book__grid,.faq__grid,.svc,.about__grid,.about-craft__grid{grid-template-columns:1fr}
   .name{grid-template-columns:1fr}.name__media{aspect-ratio:4/3}
   .svc__card--lg{min-height:400px}
   .steps{grid-template-columns:1fr 1fr}.steps li{border-right:0;padding-left:0;border-bottom:1px solid var(--line);padding-bottom:24px}
