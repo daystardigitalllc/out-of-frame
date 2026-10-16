@@ -69,6 +69,16 @@
   }, { threshold: .15 });
   document.querySelectorAll('.reel__tile, .svc__clip').forEach(function (el) { vio.observe(el); });
 
+  // ---- Closing section: play the clip while visible, close the brackets in
+  var closing = $('#closing'), cv = closing.querySelector('video');
+  new IntersectionObserver(function (ents) {
+    ents.forEach(function (en) {
+      closing.classList.toggle('is-framed', en.isIntersecting);
+      if (reduce) return;
+      if (en.isIntersecting) { var pr = cv.play(); if (pr && pr.catch) pr.catch(function () {}); } else cv.pause();
+    });
+  }, { threshold: .35 }).observe(closing);
+
   // ---- Full film (YouTube) in a modal
   function embed(start) {
     return 'https://www.youtube-nocookie.com/embed/' + VID + '?' + new URLSearchParams({ autoplay: 1, start: start, rel: 0, modestbranding: 1, playsinline: 1 });
