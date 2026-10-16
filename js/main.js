@@ -82,6 +82,7 @@
             timer = setInterval(function () {
               if (player.getCurrentTime() >= segs[si].end) {
                 si = (si + 1) % segs.length;
+                $('#heroWrap').classList.remove('is-on'); // hide the seek so no half-decoded frames show
                 player.seekTo(segs[si].start, true);
               }
             }, 400);
