@@ -8,19 +8,13 @@ window.OOF = {
   // YouTube source video
   videoId: "2kXzLd9Pm9M",
 
-  // Hero background loop: the clips cycle (seconds into the video)
-  heroSegments: [
-    { start: 5,   end: 10  },   // 0:05–0:10
-    { start: 121, end: 126 },   // 2:01–2:06
-    { start: 245, end: 250 },   // 4:05–4:10
-    { start: 355, end: 360 }    // 5:55–6:00
-  ],
+  // Hero background: video/hero.mp4 (film clips 0:05-0:10, 2:01-2:06, 4:05-4:10, 5:55-6:00)
 
-  // Highlight reel tiles (seconds into the video)
+  // Highlight tiles: looping preview file + where the full film starts when clicked (seconds)
   reel: [
-    { title: "The Ceremony",   tag: "Moments",  start: 116, end: 130 },
-    { title: "The Details",    tag: "Cinema",   start: 233, end: 247 },
-    { title: "The Celebration",tag: "Natural audio", start: 349, end: 363 }
+    { title: "The Ceremony",    tag: "Moments",       src: "video/clip1.mp4", poster: "video/clip1.jpg", start: 116 },
+    { title: "The Details",     tag: "Cinema",        src: "video/clip2.mp4", poster: "video/clip2.jpg", start: 233 },
+    { title: "The Celebration", tag: "Natural audio", src: "video/clip3.mp4", poster: "video/clip3.jpg", start: 349 }
   ],
 
   // Contact form: with no id set, the form opens an email to Dan@outofframemedia.com instead.

@@ -8,7 +8,7 @@ Everything configurable lives in [`js/config.js`](js/config.js):
 
 | Setting | What it does |
 |---|---|
-| `heroSegments` / `reel` | Timestamps (seconds) from the YouTube film used for the hero loop and highlight tiles |
+| `reel` | Highlight tiles (preview files in `video/`, plus where the full YouTube film starts when clicked) |
 | `formspreeId` | Free form id from formspree.io → inquiries email straight to Dan. Empty = form opens an email to Dan@outofframemedia.com |
 | `depositUrl` | Stripe **Payment Link** for deposits. Empty = button becomes "Call To Reserve" |
 
@@ -20,3 +20,6 @@ Then open http://localhost:8000.
 
 ## Deploy (GitHub Pages)
 Repo Settings → Pages → Deploy from branch `main` / root.
+
+## Video files
+`video/hero.mp4` is the hero loop (film clips 0:05-0:10, 2:01-2:06, 4:05-4:10, 5:55-6:00). The full 1080p source is git-ignored (too large for GitHub).

@@ -46,12 +46,8 @@ a{color:inherit;text-decoration:none}
 /* Hero: sticky focus-in */
 .hero{height:210vh;position:relative}
 .hero__sticky{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:grid;place-items:center}
-.hero__bg{position:absolute;inset:-6%;will-change:filter,transform;filter:blur(18px) brightness(.55);transform:scale(1.12)}
-.hero__poster,.hero__player,.hero__player iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero__player{opacity:0;transition:opacity .9s}
-.hero__player.is-on{opacity:1}
-.hero__player iframe{border:0;pointer-events:none;top:50%;left:50%;width:max(100%,177.78vh);height:max(100%,56.25vw);transform:translate(-50%,-50%)}
-.hero__poster{filter:var(--photo-filter)}
+.hero__bg{position:absolute;inset:0;will-change:transform,clip-path;transform:translate(36vw,16vh) scale(.5) rotate(6deg);clip-path:inset(0 round 16px);filter:brightness(.8)}
+.hero__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:var(--photo-filter)}
 .hero__shade{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(11,10,9,.55),transparent 80%),linear-gradient(180deg,rgba(11,10,9,.6),rgba(11,10,9,.4) 40%,rgba(11,10,9,.9));pointer-events:none}
 .hero__vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 45%,rgba(0,0,0,.6));pointer-events:none}
 .hero__content{position:relative;z-index:3;text-align:center;padding:0 24px;max-width:1000px;will-change:transform,opacity}
@@ -105,8 +101,8 @@ a{color:inherit;text-decoration:none}
 .svc__card h3{font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem,3vw,2.6rem);line-height:1.05;margin-bottom:.8rem}
 .svc__card p{color:var(--mute);max-width:44ch}
 .svc__card--lg p{color:rgba(241,236,228,.82)}
-.svc__clip{position:absolute;inset:0;z-index:0;container-type:size;background:#000 url(https://i.ytimg.com/vi/2kXzLd9Pm9M/maxresdefault.jpg) center/cover}
-.svc__clip iframe,.reel__tile iframe{position:absolute;border:0;pointer-events:none;top:50%;left:50%;width:max(100cqw,177.78cqh);height:max(100cqh,56.25cqw);transform:translate(-50%,-50%) scale(1.15);filter:var(--photo-filter)}
+.svc__clip{position:absolute;inset:0;z-index:0}
+.svc__clip video,.reel__tile video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:var(--photo-filter)}
 .svc__clip::after,.reel__tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,10,9,.25),rgba(11,10,9,.92))}
 
 /* Films */
@@ -121,7 +117,7 @@ a{color:inherit;text-decoration:none}
 .feature__meta b{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,4vw,3.4rem);line-height:1.1}
 .feature__meta em{font-style:normal;color:var(--mute);font-size:.85rem}
 .reel{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px}
-.reel__tile{container-type:size;background:#000 url(https://i.ytimg.com/vi/2kXzLd9Pm9M/maxresdefault.jpg) center/cover;position:relative;aspect-ratio:4/5;overflow:hidden;cursor:pointer;border:1px solid var(--line);padding:0;color:inherit;text-align:left;transition:border-color .4s,transform .5s var(--ease)}
+.reel__tile{background:#000;position:relative;aspect-ratio:4/5;overflow:hidden;cursor:pointer;border:1px solid var(--line);padding:0;color:inherit;text-align:left;transition:border-color .4s,transform .5s var(--ease)}
 .reel__tile:hover{border-color:var(--gold);transform:translateY(-4px)}
 .reel__meta{position:absolute;left:22px;bottom:20px;right:22px;z-index:2;display:flex;flex-direction:column}
 .reel__meta small{font-size:.64rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}

@@ -42,8 +42,7 @@
   <section class="hero" id="hero">
     <div class="hero__sticky">
       <div class="hero__bg" id="heroBg">
-        <img class="hero__poster" src="https://i.ytimg.com/vi/2kXzLd9Pm9M/maxresdefault.jpg" alt="">
-        <div class="hero__player" id="heroWrap"><div id="heroPlayer"></div></div>
+        <video class="hero__video" id="heroVideo" src="video/hero.mp4" poster="video/hero.jpg" autoplay muted loop playsinline preload="auto"></video>
       </div>
       <div class="hero__shade" id="heroShade"></div>
       <div class="hero__vignette"></div>
@@ -52,7 +51,7 @@
         <i class="vf vf--tl"></i><i class="vf vf--tr"></i><i class="vf vf--bl"></i><i class="vf vf--br"></i>
         <div class="vf__reticle"><span></span></div>
         <div class="vf__rec"><b></b>REC</div>
-        <div class="vf__focus" id="vfFocus">FOCUSING…</div>
+        <div class="vf__focus" id="vfFocus">OUT OF FRAME</div>
       </div>
 
       <div class="hero__content" id="heroContent">
@@ -66,7 +65,7 @@
         </div>
       </div>
 
-      <a class="hero__scroll" href="#story" id="heroScroll" aria-label="Scroll"><span>Scroll to focus</span><i></i></a>
+      <a class="hero__scroll" href="#story" id="heroScroll" aria-label="Scroll"><span>Scroll to frame it</span><i></i></a>
     </div>
   </section>
 
@@ -111,7 +110,7 @@
       <div class="svc">
         <article class="svc__card svc__card--lg reveal">
           <span class="svc__num">01</span>
-          <div class="svc__clip" data-clip="116" data-end="130"></div>
+          <div class="svc__clip" data-src="video/clip1.mp4" data-poster="video/clip1.jpg"></div>
           <div class="svc__text">
             <h3>Wedding filmmaking</h3>
             <p>Documentary-driven coverage, intimate moments, natural audio, and cinematic storytelling that feels true to the couple.</p>
@@ -147,7 +146,7 @@
       </div>
 
       <button class="feature reveal" id="featurePlay" aria-label="Play the full wedding film">
-        <img src="https://i.ytimg.com/vi/2kXzLd9Pm9M/maxresdefault.jpg" alt="Wedding film still">
+        <img src="video/feature.jpg" alt="Wedding film still">
         <span class="feature__shade"></span>
         <span class="feature__play"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
         <span class="feature__meta"><small>Featured Film</small><b>Ray Wedding</b><em>Watch the full film · 7:46</em></span>
