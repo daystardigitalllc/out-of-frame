@@ -12,7 +12,7 @@
 <link rel="icon" href="assets/logo-mark.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"Out of Frame","description":"Independent wedding film and post-production studio.","telephone":"+1-615-686-7495","email":"Dan@outofframemedia.com","address":{"@type":"PostalAddress","addressLocality":"Springfield","addressRegion":"TN","addressCountry":"US"}}
@@ -28,7 +28,6 @@
     <a href="#story">Story</a>
     <a href="#services">Services</a>
     <a href="#films">Films</a>
-    <a href="#process">Process</a>
     <a href="#faq">FAQ</a>
     <a class="nav__phone" href="tel:+16156867495" data-phone>615-686-7495</a>
   </nav>
@@ -45,7 +44,6 @@
         <video class="hero__video" id="heroVideo" src="video/hero.mp4" poster="video/hero.jpg" autoplay muted loop playsinline preload="auto"></video>
       </div>
       <div class="hero__shade" id="heroShade"></div>
-      <div class="hero__vignette"></div>
 
       <div class="viewfinder" id="viewfinder" aria-hidden="true">
         <i class="vf vf--tl"></i><i class="vf vf--tr"></i><i class="vf vf--bl"></i><i class="vf vf--br"></i>
@@ -65,16 +63,9 @@
         </div>
       </div>
 
-      <a class="hero__scroll" href="#story" id="heroScroll" aria-label="Scroll"><span>Scroll to frame it</span><i></i></a>
+      <a class="hero__scroll" href="#story" id="heroScroll">Scroll</a>
     </div>
   </section>
-
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee__track">
-      <span>Wedding Films ✦ Documentary Coverage ✦ Natural Audio ✦ Color Grading ✦ Sound Design ✦ Post-Production ✦ Springfield, TN &amp; Beyond ✦ </span>
-      <span>Wedding Films ✦ Documentary Coverage ✦ Natural Audio ✦ Color Grading ✦ Sound Design ✦ Post-Production ✦ Springfield, TN &amp; Beyond ✦ </span>
-    </div>
-  </div>
 
   <!-- STORY -->
   <section class="section story" id="story">
@@ -108,31 +99,26 @@
         <h2 class="h2">Three ways we <em>tell stories.</em></h2>
       </div>
       <div class="svc">
-        <article class="svc__card svc__card--lg reveal">
-          <span class="svc__num">01</span>
+        <article class="svc__card--lg reveal">
           <div class="svc__clip" data-src="video/clip1.mp4" data-poster="video/clip1.jpg"></div>
           <div class="svc__text">
             <h3>Wedding filmmaking</h3>
             <p>Documentary coverage, natural audio and cinematic storytelling.</p>
-            <a class="link" href="#book">Book a film <span>→</span></a>
+            <a class="link" href="#book">Book a wedding film</a>
           </div>
         </article>
-        <article class="svc__card reveal">
-          <span class="svc__num">02</span>
-          <div class="svc__text">
+        <div class="svc__rows">
+          <article class="svc__row reveal">
             <h3>Post-production</h3>
             <p>Editing, color grading, sound design and finishing.</p>
-            <a class="link" href="#book">Start a project <span>→</span></a>
-          </div>
-        </article>
-        <article class="svc__card reveal">
-          <span class="svc__num">03</span>
-          <div class="svc__text">
+            <a class="link" href="#book">Start a project</a>
+          </article>
+          <article class="svc__row reveal">
             <h3>Creative partnerships</h3>
             <p>Editing and finishing for filmmakers, in their own style.</p>
-            <a class="link" href="#book">Partner with us <span>→</span></a>
-          </div>
-        </article>
+            <a class="link" href="#book">Partner with us</a>
+          </article>
+        </div>
       </div>
     </div>
   </section>
@@ -156,22 +142,6 @@
     </div>
   </section>
 
-  <!-- PROCESS -->
-  <section class="section process" id="process">
-    <div class="wrap">
-      <div class="section__head reveal">
-        <p class="eyebrow">How It Works</p>
-        <h2 class="h2">Four simple <em>steps.</em></h2>
-      </div>
-      <ol class="steps">
-        <li class="reveal"><b>01</b><h3>Reach out</h3><p>Tell us about your day.</p></li>
-        <li class="reveal"><b>02</b><h3>Reserve</h3><p>A deposit holds your date.</p></li>
-        <li class="reveal"><b>03</b><h3>We film</h3><p>Low-profile, documentary style.</p></li>
-        <li class="reveal"><b>04</b><h3>You watch</h3><p>Your finished, graded film.</p></li>
-      </ol>
-    </div>
-  </section>
-
   <!-- BOOK -->
   <section class="section book" id="book">
     <div class="wrap book__grid">
@@ -180,16 +150,16 @@
         <h2 class="h2">Let's tell your <em>story.</em></h2>
         <p class="lead">Request info, or reserve your date with a deposit.</p>
 
-        <div class="book__cards">
-          <div class="mini">
-            <small>Ready?</small>
-            <a class="btn btn--solid" id="depositBtn" href="#" target="_blank" rel="noopener">Pay Deposit &amp; Book</a>
-          </div>
-          <div class="mini">
-            <small>Prefer to talk?</small>
-            <a class="btn" href="tel:+16156867495" data-phone-btn>Call 615-686-7495</a>
-          </div>
+        <div class="book__actions">
+          <a class="btn btn--solid" id="depositBtn" href="#" target="_blank" rel="noopener">Pay Deposit</a>
+          <a class="btn" href="tel:+16156867495" data-phone-btn>Call 615-686-7495</a>
         </div>
+        <ol class="book__steps">
+          <li><b>Tell us</b> about your day.</li>
+          <li><b>Reserve</b> your date with a deposit.</li>
+          <li><b>We film</b> it, low-profile and documentary style.</li>
+          <li><b>You get</b> a finished, graded film.</li>
+        </ol>
         <p class="book__loc">Springfield, TN · <a href="mailto:Dan@outofframemedia.com">Dan@outofframemedia.com</a></p>
       </div>
 
@@ -239,10 +209,9 @@
 
   <section class="closing">
     <div class="wrap reveal">
-      <h2 class="closing__title">Ready when<br><em>you are.</em></h2>
+      <h2 class="closing__title">Got a date<br><em>in mind?</em></h2>
       <div class="hero__ctas">
-        <a class="btn btn--solid" href="#book">Book Your Date</a>
-        <a class="btn" href="tel:+16156867495" data-phone-btn>Call 615-686-7495</a>
+        <a class="btn btn--solid" href="#book">Check Your Date</a>
       </div>
     </div>
   </section>

@@ -56,7 +56,7 @@
     var b = document.createElement('button');
     b.className = 'reel__tile reveal'; b.setAttribute('aria-label', 'Play ' + r.title);
     b.appendChild(makeVideo(r.src, r.poster));
-    b.insertAdjacentHTML('beforeend', '<span class="reel__meta"><small>' + r.tag + '</small><b>' + r.title + '</b></span>');
+    b.insertAdjacentHTML('beforeend', '<span class="reel__meta"><b>' + r.title + '</b></span>');
     reel.appendChild(b);
     b.addEventListener('click', function () { openModal(r.start); });
   });
