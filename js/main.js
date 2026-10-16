@@ -69,15 +69,26 @@
   }, { threshold: .15 });
   document.querySelectorAll('.reel__tile, .svc__clip').forEach(function (el) { vio.observe(el); });
 
-  // ---- Closing section: play the clip while visible, close the brackets in
-  var closing = $('#closing'), cv = closing.querySelector('video');
+  // ---- Closing section: same out-of-frame entrance as the hero, driven by scroll position
+  var closing = $('#closing'), cbg = closing.querySelector('.closing__bg'), cv = cbg.querySelector('video'), cin = closing.querySelector('.closing__inner');
+  function closingScroll() {
+    var r = closing.getBoundingClientRect(), vh = window.innerHeight;
+    var p = Math.max(0, Math.min(1, (vh * 0.95 - r.top) / (vh * 0.75)));
+    var e = reduce ? 1 : ease(p), k = 1 - e;
+    cbg.style.transform = 'translate(' + (-36 * k).toFixed(2) + 'vw,' + (14 * k).toFixed(2) + 'vh) scale(' + (0.5 + 0.5 * e).toFixed(4) + ') rotate(' + (-6 * k).toFixed(2) + 'deg)';
+    cbg.style.clipPath = 'inset(0 round ' + (16 * k).toFixed(1) + 'px)';
+    cin.style.opacity = reduce ? 1 : Math.max(0, Math.min(1, (p - 0.55) / 0.35)).toFixed(3);
+    closing.classList.toggle('is-framed', p > 0.95);
+  }
+  window.addEventListener('scroll', function () { requestAnimationFrame(closingScroll); }, { passive: true });
+  window.addEventListener('resize', closingScroll);
+  closingScroll();
   new IntersectionObserver(function (ents) {
     ents.forEach(function (en) {
-      closing.classList.toggle('is-framed', en.isIntersecting);
       if (reduce) return;
       if (en.isIntersecting) { var pr = cv.play(); if (pr && pr.catch) pr.catch(function () {}); } else cv.pause();
     });
-  }, { threshold: .35 }).observe(closing);
+  }, { threshold: .1 }).observe(closing);
 
   // ---- Full film (YouTube) in a modal
   function embed(start) {
