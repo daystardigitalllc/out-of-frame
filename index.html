@@ -196,9 +196,12 @@
         </div>
         <label>Message<textarea name="message" rows="4"></textarea></label>
         <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
-        <button class="btn btn--solid" type="submit">Request Information</button>
+        <div class="form__actions">
+          <button class="btn btn--solid" type="submit">Request Information</button>
+          <a class="btn" id="depositBtn" href="#" target="_blank" rel="noopener">Pay Deposit</a>
+        </div>
         <p class="form__status" id="formStatus" role="status"></p>
-        <p class="form__deposit">A deposit holds your date once we've talked. <a id="depositBtn" href="#" target="_blank" rel="noopener">Pay your deposit</a></p>
+        <p class="form__deposit">A deposit holds your date once we've talked.</p>
       </form>
     </div>
   </section>

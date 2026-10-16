@@ -137,8 +137,8 @@ a{color:inherit;text-decoration:none}
 .form input:focus,.form select:focus,.form textarea:focus{border-color:var(--gold)}
 .form input.err{border-color:#e0463b}
 .hp{position:absolute;left:-9999px}
-.form .btn{justify-self:start;margin-top:6px}
-.form__deposit{color:var(--mute)}.form__deposit a{color:var(--gold2);border-bottom:1px solid var(--gold)}
+.form__deposit{color:var(--mute);font-size:.95rem}
+.form__actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
 .form__status{color:var(--gold2);min-height:1.4em}
 
 /* FAQ */

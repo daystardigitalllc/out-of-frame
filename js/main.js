@@ -9,7 +9,14 @@
   $('#yr').textContent = new Date().getFullYear();
   var dep = $('#depositBtn');
   if (C.depositUrl) { dep.href = C.depositUrl; }
-  else { dep.textContent = 'Call to reserve'; dep.href = C.phoneHref; dep.removeAttribute('target'); }
+  else {
+    // placeholder until a Stripe Payment Link is set in config.js
+    dep.removeAttribute('target');
+    dep.addEventListener('click', function (e) {
+      e.preventDefault();
+      $('#formStatus').textContent = 'Online deposits are coming soon. To reserve your date now, call ' + C.phone + '.';
+    });
+  }
 
   // ---- Nav
   var nav = $('#nav'), toggle = $('#navToggle');
