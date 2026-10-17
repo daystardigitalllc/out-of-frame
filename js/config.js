@@ -22,5 +22,5 @@ window.OOF = {
   formspreeId: "",
 
   // Deposits: create a Stripe Payment Link (https://dashboard.stripe.com/payment-links) and paste it here
-  depositUrl: ""
+  depositUrl: "https://buy.stripe.com/aFa7sM3e86Jz6BM6uc5EY00"
 };
