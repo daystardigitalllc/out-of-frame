@@ -24,8 +24,8 @@
   $('#navLinks').addEventListener('click', function (e) { if (e.target.tagName === 'A') { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', false); } });
 
   // ---- Hero: video starts "out of frame" (off to the side, small, tilted) and slides into frame on scroll
-  var hero = $('#hero'), bg = $('#heroBg'), content = $('#heroContent'), vf = $('#viewfinder'),
-      vfFocus = $('#vfFocus'), shade = $('#heroShade'), cue = $('#heroScroll'), reticle = vf.querySelector('.vf__reticle span');
+  var hero = $('#hero'), bg = $('#heroBg'), content = $('#heroContent'),
+      shade = $('#heroShade'), cue = $('#heroScroll');
   function ease(t) { return 1 - Math.pow(1 - t, 3); }
   function onScroll() {
     var y = window.scrollY;
@@ -37,11 +37,7 @@
     bg.style.clipPath = 'inset(0 round ' + (16 * k).toFixed(1) + 'px)';
     bg.style.filter = 'brightness(' + (0.8 + 0.2 * e).toFixed(3) + ')';
     shade.style.opacity = (1 - 0.15 * e).toFixed(3);
-    var locked = p > 0.95;
-    vf.classList.toggle('is-locked', locked);
-    vfFocus.textContent = locked ? 'IN FRAME' : 'OUT OF FRAME';
     cue.style.opacity = y > 60 ? 0 : 1;
-    reticle.style.transform = 'scale(' + (1.5 - 0.5 * e).toFixed(3) + ')';
   }
   window.addEventListener('scroll', function () { requestAnimationFrame(onScroll); }, { passive: true });
   window.addEventListener('resize', onScroll);

@@ -58,21 +58,9 @@ a{color:inherit;text-decoration:none}
 .hero__logo{margin:0 auto 1.2rem;height:76px;width:auto}
 .hero__content .eyebrow{color:var(--gold2);text-shadow:0 1px 12px rgba(0,0,0,.8)}
 .hero__title{font-family:var(--serif);font-weight:500;font-size:clamp(2.9rem,7.4vw,6rem);line-height:1;letter-spacing:-.015em;text-shadow:0 2px 30px rgba(0,0,0,.55)}
-.hero__sub{margin:1.4rem auto 2.2rem;max-width:34ch;font-size:1.2rem;text-shadow:0 2px 24px rgba(0,0,0,.6)}
 .hero__ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 .hero__scroll{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:4;font-size:.85rem;color:var(--mute);transition:opacity .3s}
 
-/* Viewfinder: ties to the name. Brackets frame the shot; the label flips to IN FRAME when the video locks in. */
-.viewfinder{position:absolute;inset:clamp(70px,9vh,100px) clamp(18px,4vw,56px) clamp(60px,8vh,90px);z-index:2;pointer-events:none;transition:opacity .4s}
-.vf{position:absolute;width:30px;height:30px;border:solid rgba(241,236,228,.7);border-width:0}
-.vf--tl{top:0;left:0;border-width:1px 0 0 1px}.vf--tr{top:0;right:0;border-width:1px 1px 0 0}
-.vf--bl{bottom:0;left:0;border-width:0 0 1px 1px}.vf--br{bottom:0;right:0;border-width:0 1px 1px 0}
-.vf__reticle{position:absolute;inset:0;display:grid;place-items:center}
-.vf__reticle span{width:clamp(56px,7vw,84px);aspect-ratio:1;border:1px solid var(--gold);opacity:.6;transition:border-color .3s}
-.vf__rec{position:absolute;top:12px;right:46px;display:flex;align-items:center;gap:8px;font-size:.75rem;letter-spacing:.12em}
-.vf__rec b{width:7px;height:7px;border-radius:50%;background:#e0463b}
-.vf__focus{position:absolute;bottom:12px;left:46px;font-size:.75rem;letter-spacing:.12em;color:var(--gold2)}
-.viewfinder.is-locked .vf__reticle span{border-color:var(--gold2);opacity:1}
 
 /* Story */
 .story__grid{display:grid;grid-template-columns:5fr 6fr;gap:clamp(32px,7vw,100px);align-items:start}
@@ -223,5 +211,5 @@ a{color:inherit;text-decoration:none}
   .footer__grid{grid-template-columns:1fr}
   .hero__logo{height:60px}
 }
-@media (max-width:560px){.steps{grid-template-columns:1fr}.vf__reticle{display:none}.form__row{grid-template-columns:1fr}.hero__scroll{display:none}.hero__ctas .btn{width:100%}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}.form__row{grid-template-columns:1fr}.hero__scroll{display:none}.hero__ctas .btn{width:100%}}
 @media (prefers-reduced-motion:reduce){.closing__bg{transform:none;clip-path:none}.closing__inner{opacity:1}.closing__frame i{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
