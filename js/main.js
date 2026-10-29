@@ -54,6 +54,15 @@
   // the first-look clip fades up from black, so park it on a real frame until it plays
   var fl = document.querySelector('.name__media video');
   if (fl) fl.addEventListener('loadedmetadata', function () { fl.currentTime = 6; }, { once: true });
+  // tap to unmute: starts the film over with sound, tap again to mute
+  var sb = $('#soundBtn');
+  if (fl && sb) sb.addEventListener('click', function () {
+    var on = fl.muted;
+    if (on) { fl.currentTime = 0; fl.muted = false; var pr = fl.play(); if (pr && pr.catch) pr.catch(function () {}); }
+    else { fl.muted = true; }
+    sb.textContent = on ? 'Mute' : 'Tap to unmute';
+    sb.setAttribute('aria-pressed', on);
+  });
   var vio = new IntersectionObserver(function (ents) {
     ents.forEach(function (en) {
       var v = en.target.querySelector('video'); if (!v || reduce) return;
