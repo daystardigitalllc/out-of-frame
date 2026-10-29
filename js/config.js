@@ -22,7 +22,7 @@ window.OOF = {
   // Contact form: submissions are emailed to Dan through FormSubmit (no account needed).
   // First ever submission sends Dan a one-time activation email; click its link and inquiries flow after that.
   // Empty = the form falls back to opening an email to Dan.
-  formEndpoint: "https://formsubmit.co/ajax/Dan@outofframestudios.com",
+  formEndpoint: "",
 
   // Deposits: create a Stripe Payment Link (https://dashboard.stripe.com/payment-links) and paste it here
   depositUrl: "https://buy.stripe.com/aFa7sM3e86Jz6BM6uc5EY00"
