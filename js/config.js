@@ -5,8 +5,10 @@ window.OOF = {
   email: "Dan@outofframestudios.com",
   location: "Springfield, TN",
 
-  // YouTube source video
-  videoId: "2kXzLd9Pm9M",
+  // Hosted films (Cloudflare R2, served from our own domain)
+  media: "https://media.outofframestudios.com",
+  rayFilm: "ray-film.mp4",
+  poseyFilm: "posey-film.mp4",
 
   // Hero background: video/hero.mp4 (film clips 0:05-0:10, 2:01-2:06, 4:05-4:10, 5:55-6:00)
 

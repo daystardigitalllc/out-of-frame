@@ -1,7 +1,6 @@
 (function () {
   var C = window.OOF, $ = function (s, r) { return (r || document).querySelector(s); };
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var VID = C.videoId;
 
   // ---- Config-driven bits
   document.querySelectorAll('[data-phone]').forEach(function (a) { a.textContent = C.phone; a.href = C.phoneHref; });
@@ -80,16 +79,14 @@
     });
   }, { threshold: .1 }).observe(closing);
 
-  // ---- Full film (YouTube) in a modal
-  function embed(start) {
-    return 'https://www.youtube-nocookie.com/embed/' + VID + '?' + new URLSearchParams({ autoplay: 1, start: start, rel: 0, modestbranding: 1, playsinline: 1 });
-  }
+  // ---- Full film (hosted) in a modal
   // ---- Modal
   var modal = $('#modal'), mf = $('#modalFrame');
   function openModal(start) {
-    var f = document.createElement('iframe');
-    f.src = embed(start || 0); f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true; f.title = 'Out of Frame film';
-    mf.innerHTML = ''; mf.appendChild(f); modal.hidden = false; document.body.style.overflow = 'hidden';
+    var v = document.createElement('video');
+    v.src = C.media + '/' + C.rayFilm + '#t=' + (start || 0);
+    v.controls = true; v.autoplay = true; v.playsInline = true; v.setAttribute('aria-label', 'Out of Frame wedding film');
+    mf.innerHTML = ''; mf.appendChild(v); modal.hidden = false; document.body.style.overflow = 'hidden';
   }
   function closeModal() { modal.hidden = true; mf.innerHTML = ''; document.body.style.overflow = ''; }
   $('#modalClose').addEventListener('click', closeModal);

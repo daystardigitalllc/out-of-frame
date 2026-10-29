@@ -5,6 +5,7 @@
 
   document.querySelectorAll('[data-phone]').forEach(function (a) { a.textContent = C.phone; a.href = C.phoneHref; });
   document.querySelectorAll('[data-phone-btn]').forEach(function (a) { a.textContent = 'Call ' + C.phone; a.href = C.phoneHref; });
+  document.querySelectorAll('video[data-film]').forEach(function (v) { v.src = C.media + '/' + C[v.dataset.film]; });
   $('#yr').textContent = new Date().getFullYear();
 
   var nav = $('#nav'), toggle = $('#navToggle');

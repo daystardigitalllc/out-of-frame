@@ -129,7 +129,7 @@ a{color:inherit;text-decoration:none}
 .film__title{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,4vw,3.2rem);line-height:1.05}
 .film__note{color:var(--mute);max-width:36ch}
 .film__player{position:relative;aspect-ratio:16/9;background:#000;border:1px solid var(--line)}
-.film__player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.film__player video{position:absolute;inset:0;width:100%;height:100%;background:#000}
 .films-more{color:var(--mute)}
 .films-more .link{margin-top:.6rem}
 
@@ -196,7 +196,7 @@ a{color:inherit;text-decoration:none}
 .modal{position:fixed;inset:0;z-index:100;background:rgba(5,4,4,.95);display:grid;place-items:center;padding:24px}
 .modal[hidden]{display:none}
 .modal__frame{width:min(1200px,100%);aspect-ratio:16/9}
-.modal__frame iframe{width:100%;height:100%;border:0}
+.modal__frame video{width:100%;height:100%;background:#000}
 .modal__close{position:absolute;top:14px;right:22px;background:none;border:0;color:var(--ink);font-size:2.6rem;cursor:pointer;line-height:1}
 
 /* Reveal: a short fade, nothing more */
