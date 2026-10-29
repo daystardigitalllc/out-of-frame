@@ -50,11 +50,8 @@
     b.addEventListener('click', function () { openModal(r.start); });
   });
   document.querySelectorAll('.svc__clip').forEach(function (el) { el.appendChild(makeVideo(el.dataset.src, el.dataset.poster)); });
-  // the first-look clip fades up from black, so park it on a real frame until it plays
-  var fl = document.querySelector('.name__media video');
-  if (fl) fl.addEventListener('loadedmetadata', function () { fl.currentTime = 6; }, { once: true });
-  // tap to unmute: starts the film over with sound, tap again to mute
-  var sb = $('#soundBtn');
+  // tap to unmute: restarts the first look with sound, tap again to mute
+  var fl = document.querySelector('.name__media video'), sb = $('#soundBtn');
   if (fl && sb) sb.addEventListener('click', function () {
     var on = fl.muted;
     if (on) { fl.currentTime = 0; fl.muted = false; var pr = fl.play(); if (pr && pr.catch) pr.catch(function () {}); }
