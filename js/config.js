@@ -14,9 +14,9 @@ window.OOF = {
 
   // Highlight tiles: looping preview file + where the full film starts when clicked (seconds)
   reel: [
-    { title: "The Ceremony", src: "video/clip1.mp4", poster: "video/clip1.jpg", film: "rayFilm", start: 116 },
+    { title: "The Ceremony", src: "video/ray-ceremony.mp4", poster: "video/ray-ceremony.jpg", film: "rayFilm", start: 203 },
     { title: "The Details", src: "video/posey-details.mp4", poster: "video/posey-details.jpg", film: "poseyFilm", start: 99 },
-    { title: "The Celebration", src: "video/posey-celebration.mp4", poster: "video/posey-celebration.jpg", film: "poseyFilm", start: 446 }
+    { title: "The Celebration", src: "video/posey-dance.mp4", poster: "video/posey-dance.jpg", film: "poseyFilm", start: 477 }
   ],
 
   // Contact form: Web3Forms access key (public by design). Inquiries are emailed to the recipient set in the Web3Forms dashboard.
