@@ -1,0 +1,11 @@
+# Code and pages: always revalidate so edits show up right after a deploy
+/css/*
+  Cache-Control: public, max-age=0, must-revalidate
+/js/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Videos and images are large and rarely change: cache for a day
+/video/*
+  Cache-Control: public, max-age=86400
+/assets/*
+  Cache-Control: public, max-age=86400
