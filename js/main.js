@@ -47,7 +47,7 @@
     b.appendChild(makeVideo(r.src, r.poster));
     b.insertAdjacentHTML('beforeend', '<span class="reel__meta"><b>' + r.title + '</b></span>');
     reel.appendChild(b);
-    b.addEventListener('click', function () { openModal(r.start); });
+    b.addEventListener('click', function () { openModal(r.film, r.start); });
   });
   document.querySelectorAll('.svc__clip').forEach(function (el) { el.appendChild(makeVideo(el.dataset.src, el.dataset.poster)); });
   // tap to unmute: restarts the first look with sound, tap again to mute
@@ -79,9 +79,9 @@
   // ---- Full film (hosted) in a modal
   // ---- Modal
   var modal = $('#modal'), mf = $('#modalFrame');
-  function openModal(start) {
+  function openModal(film, start) {
     var v = document.createElement('video');
-    v.src = C.media + '/' + C.rayFilm + '#t=' + (start || 0);
+    v.src = C.media + '/' + C[film || 'rayFilm'] + '#t=' + (start || 0);
     v.controls = true; v.autoplay = true; v.playsInline = true; v.setAttribute('aria-label', 'Out of Frame wedding film');
     mf.innerHTML = ''; mf.appendChild(v); modal.hidden = false; document.body.style.overflow = 'hidden';
   }
