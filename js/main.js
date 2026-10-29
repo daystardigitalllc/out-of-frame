@@ -23,18 +23,12 @@
   toggle.addEventListener('click', function () { var o = nav.classList.toggle('open'); toggle.setAttribute('aria-expanded', o); });
   $('#navLinks').addEventListener('click', function (e) { if (e.target.tagName === 'A') { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', false); } });
 
-  // ---- Hero: the footage starts soft and out of focus, then racks into focus over the first stretch of scroll
-  var hero = $('#hero'), bg = $('#heroBg'), shade = $('#heroShade'), cue = $('#heroScroll');
+  // ---- Nav turns solid after the first bit of scroll; the scroll cue fades out
+  var cue = $('#heroScroll');
   function ease(t) { return 1 - Math.pow(1 - t, 3); }
   function onScroll() {
     var y = window.scrollY;
     nav.classList.toggle('is-solid', y > 40);
-    var span = hero.offsetHeight - window.innerHeight;
-    var p = Math.max(0, Math.min(1, y / (span * 0.5)));
-    var e = reduce ? 1 : ease(p), k = 1 - e;
-    bg.style.filter = 'blur(' + (18 * k).toFixed(2) + 'px) brightness(' + (0.8 + 0.2 * e).toFixed(3) + ')';
-    bg.style.transform = 'scale(' + (1 + 0.08 * k).toFixed(4) + ')';
-    shade.style.opacity = (1 - 0.15 * e).toFixed(3);
     cue.style.opacity = y > 60 ? 0 : 1;
   }
   window.addEventListener('scroll', function () { requestAnimationFrame(onScroll); }, { passive: true });
