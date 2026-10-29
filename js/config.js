@@ -19,10 +19,9 @@ window.OOF = {
     { title: "The Celebration", src: "video/clip3.mp4", poster: "video/clip3.jpg", start: 349 }
   ],
 
-  // Contact form: submissions are emailed to Dan through FormSubmit (no account needed).
-  // First ever submission sends Dan a one-time activation email; click its link and inquiries flow after that.
+  // Contact form: Web3Forms access key (public by design). Inquiries are emailed to the recipient set in the Web3Forms dashboard.
   // Empty = the form falls back to opening an email to Dan.
-  formEndpoint: "",
+  web3formsKey: "3738013a-5a23-4cbd-a5e7-cdc2cea29cd6",
 
   // Deposits: create a Stripe Payment Link (https://dashboard.stripe.com/payment-links) and paste it here
   depositUrl: "https://buy.stripe.com/aFa7sM3e86Jz6BM6uc5EY00"

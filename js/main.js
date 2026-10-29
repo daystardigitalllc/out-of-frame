@@ -108,13 +108,13 @@
     if (bad) { status.textContent = 'Please add your name and a valid email.'; return; }
     var data = new FormData(form);
     if (data.get('_gotcha')) return;
-    if (C.formEndpoint) {
+    if (C.web3formsKey) {
       status.textContent = 'Sending...';
-      var payload = { name: data.get('name'), email: data.get('email'), phone: data.get('phone'), event_date: data.get('date'),
-        interested_in: data.get('service'), venue: data.get('venue'), message: data.get('message'),
-        _subject: 'Website inquiry from ' + data.get('name'), _template: 'table' };
-      fetch(C.formEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(payload) })
-        .then(function (r) { return r.json().then(function (j) { if (!r.ok || String(j.success) === 'false') throw 0; }); })
+      var payload = { access_key: C.web3formsKey, subject: 'Website inquiry from ' + data.get('name'), from_name: 'Out of Frame website',
+        name: data.get('name'), email: data.get('email'), phone: data.get('phone'), event_date: data.get('date'),
+        interested_in: data.get('service'), venue: data.get('venue'), message: data.get('message'), botcheck: '' };
+      fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(payload) })
+        .then(function (r) { return r.json().then(function (j) { if (!r.ok || !j.success) throw 0; }); })
         .then(function () { form.reset(); status.textContent = 'Thank you. We received your inquiry and will be in touch very soon.'; })
         .catch(function () { status.textContent = 'Something went wrong. Please call ' + C.phone + ' or email ' + C.email + '.'; });
     } else {

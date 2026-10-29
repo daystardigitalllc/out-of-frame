@@ -9,7 +9,7 @@ Everything configurable lives in [`js/config.js`](js/config.js):
 | Setting | What it does |
 |---|---|
 | `reel` | Highlight tiles (preview files in `video/`, plus where the full YouTube film starts when clicked) |
-| `formEndpoint` | Contact form delivery (FormSubmit, no account). Inquiries are emailed to Dan@outofframestudios.com. First submission sends a one-time activation email. Empty = form opens an email to Dan |
+| `web3formsKey` | Web3Forms access key for the contact form (public by design). Recipient is set in the Web3Forms dashboard. Empty = form opens an email to Dan |
 | `depositUrl` | Stripe **Payment Link** for deposits. Empty = button becomes "Call To Reserve" |
 
 ## Run locally
