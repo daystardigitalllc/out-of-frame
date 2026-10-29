@@ -19,9 +19,10 @@ window.OOF = {
     { title: "The Celebration", src: "video/clip3.mp4", poster: "video/clip3.jpg", start: 349 }
   ],
 
-  // Contact form: with no id set, the form opens an email to Dan@outofframestudios.com instead.
-  // For direct delivery, create a free form at https://formspree.io and paste the form id (the part after /f/)
-  formspreeId: "",
+  // Contact form: submissions are emailed to Dan through FormSubmit (no account needed).
+  // First ever submission sends Dan a one-time activation email; click its link and inquiries flow after that.
+  // Empty = the form falls back to opening an email to Dan.
+  formEndpoint: "https://formsubmit.co/ajax/Dan@outofframestudios.com",
 
   // Deposits: create a Stripe Payment Link (https://dashboard.stripe.com/payment-links) and paste it here
   depositUrl: "https://buy.stripe.com/aFa7sM3e86Jz6BM6uc5EY00"

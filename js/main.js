@@ -108,10 +108,14 @@
     if (bad) { status.textContent = 'Please add your name and a valid email.'; return; }
     var data = new FormData(form);
     if (data.get('_gotcha')) return;
-    if (C.formspreeId) {
-      status.textContent = 'Sending…';
-      fetch('https://formspree.io/f/' + C.formspreeId, { method: 'POST', body: data, headers: { Accept: 'application/json' } })
-        .then(function (r) { if (!r.ok) throw 0; form.reset(); status.textContent = 'Thank you - we received your inquiry and will be in touch very soon.'; })
+    if (C.formEndpoint) {
+      status.textContent = 'Sending...';
+      var payload = { name: data.get('name'), email: data.get('email'), phone: data.get('phone'), event_date: data.get('date'),
+        interested_in: data.get('service'), venue: data.get('venue'), message: data.get('message'),
+        _subject: 'Website inquiry from ' + data.get('name'), _template: 'table' };
+      fetch(C.formEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(payload) })
+        .then(function (r) { return r.json().then(function (j) { if (!r.ok || String(j.success) === 'false') throw 0; }); })
+        .then(function () { form.reset(); status.textContent = 'Thank you. We received your inquiry and will be in touch very soon.'; })
         .catch(function () { status.textContent = 'Something went wrong. Please call ' + C.phone + ' or email ' + C.email + '.'; });
     } else {
       var body = ['Name: ' + data.get('name'), 'Email: ' + data.get('email'), 'Phone: ' + data.get('phone'),
