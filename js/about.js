@@ -6,6 +6,18 @@
   document.querySelectorAll('[data-phone]').forEach(function (a) { a.textContent = C.phone; a.href = C.phoneHref; });
   document.querySelectorAll('[data-phone-btn]').forEach(function (a) { a.textContent = 'Call ' + C.phone; a.href = C.phoneHref; });
   document.querySelectorAll('video[data-film]').forEach(function (v) { v.src = C.media + '/' + C[v.dataset.film]; });
+  // Films autoplay muted while at least half on screen, and pause once scrolled more than halfway out of view
+  var films = document.querySelectorAll('video[data-film]');
+  if (films.length && !reduce) {
+    var fio = new IntersectionObserver(function (ents) {
+      ents.forEach(function (en) {
+        var v = en.target;
+        if (en.isIntersecting && en.intersectionRatio >= 0.5) { v.muted = v.dataset.touched ? v.muted : true; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+        else if (!en.isIntersecting || en.intersectionRatio < 0.5) { v.pause(); }
+      });
+    }, { threshold: [0, 0.5, 1] });
+    films.forEach(function (v) { v.muted = true; v.addEventListener('volumechange', function () { if (!v.muted) v.dataset.touched = '1'; }); fio.observe(v); });
+  }
   $('#yr').textContent = new Date().getFullYear();
 
   var nav = $('#nav'), toggle = $('#navToggle');

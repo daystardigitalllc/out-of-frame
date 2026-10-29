@@ -127,7 +127,6 @@ a{color:inherit;text-decoration:none}
 .film__head{display:flex;justify-content:space-between;align-items:flex-end;gap:clamp(20px,5vw,64px);margin-bottom:1.4rem}
 .film__tag{font-size:.9rem;font-weight:500;color:var(--gold);margin-bottom:.4rem}
 .film__title{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,4vw,3.2rem);line-height:1.05}
-.film__note{color:var(--mute);max-width:36ch}
 .film__player{position:relative;aspect-ratio:16/9;background:#000;border:1px solid var(--line)}
 .film__player video{position:absolute;inset:0;width:100%;height:100%;background:#000}
 .films-more{color:var(--mute)}
