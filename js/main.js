@@ -25,7 +25,6 @@
 
   // ---- Nav turns solid after the first bit of scroll; the scroll cue fades out
   var cue = $('#heroScroll');
-  function ease(t) { return 1 - Math.pow(1 - t, 3); }
   function onScroll() {
     var y = window.scrollY;
     nav.classList.toggle('is-solid', y > 40);
@@ -52,6 +51,9 @@
     b.addEventListener('click', function () { openModal(r.start); });
   });
   document.querySelectorAll('.svc__clip').forEach(function (el) { el.appendChild(makeVideo(el.dataset.src, el.dataset.poster)); });
+  // the first-look clip fades up from black, so park it on a real frame until it plays
+  var fl = document.querySelector('.name__media video');
+  if (fl) fl.addEventListener('loadedmetadata', function () { fl.currentTime = 6; }, { once: true });
   var vio = new IntersectionObserver(function (ents) {
     ents.forEach(function (en) {
       var v = en.target.querySelector('video'); if (!v || reduce) return;
@@ -60,21 +62,8 @@
   }, { threshold: .15 });
   document.querySelectorAll('.reel__tile, .svc__clip, .name__media').forEach(function (el) { vio.observe(el); });
 
-  // ---- Closing section: same out-of-frame entrance as the hero, driven by scroll position
-  var closing = $('#closing'), cbg = closing.querySelector('.closing__bg'), cv = cbg.querySelector('video'), cin = closing.querySelector('.closing__inner');
-  function closingScroll() {
-    var r = closing.getBoundingClientRect(), span = closing.offsetHeight - window.innerHeight;
-    // stays out of frame for the first 30% of the pinned scroll, then slides in over the next 50%
-    var p = Math.max(0, Math.min(1, (-r.top - span * 0.3) / (span * 0.5)));
-    var e = reduce ? 1 : ease(p), k = 1 - e;
-    cbg.style.transform = 'translate(' + (-36 * k).toFixed(2) + 'vw,' + (14 * k).toFixed(2) + 'vh) scale(' + (0.5 + 0.5 * e).toFixed(4) + ') rotate(' + (-6 * k).toFixed(2) + 'deg)';
-    cbg.style.clipPath = 'inset(0 round ' + (16 * k).toFixed(1) + 'px)';
-    cin.style.opacity = reduce ? 1 : Math.max(0, Math.min(1, (p - 0.55) / 0.35)).toFixed(3);
-    closing.classList.toggle('is-framed', r.top < window.innerHeight * 0.1);
-  }
-  window.addEventListener('scroll', function () { requestAnimationFrame(closingScroll); }, { passive: true });
-  window.addEventListener('resize', closingScroll);
-  closingScroll();
+  // ---- Closing section: play the clip only while it is on screen
+  var closing = $('#closing'), cv = closing.querySelector('video');
   new IntersectionObserver(function (ents) {
     ents.forEach(function (en) {
       if (reduce) return;
@@ -94,7 +83,6 @@
     mf.innerHTML = ''; mf.appendChild(f); modal.hidden = false; document.body.style.overflow = 'hidden';
   }
   function closeModal() { modal.hidden = true; mf.innerHTML = ''; document.body.style.overflow = ''; }
-  $('#featurePlay').addEventListener('click', function () { openModal(0); });
   $('#modalClose').addEventListener('click', closeModal);
   modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
