@@ -9,14 +9,15 @@ window.OOF = {
   media: "https://media.outofframestudios.com",
   rayFilm: "ray-film.mp4",
   poseyFilm: "posey-film.mp4",
+  percyFilm: "percy-film.mp4",
 
-  // Hero background: video/hero.mp4 (film clips 0:05-0:10, 2:01-2:06, 4:05-4:10, 5:55-6:00)
+  // Hero background: video/hero.mp4 (mix of Ray, Posey and Percy clips)
 
   // Highlight tiles: looping preview file + where the full film starts when clicked (seconds)
   reel: [
     { title: "The Ceremony", src: "video/ray-ceremony.mp4", poster: "video/ray-ceremony.jpg", film: "rayFilm", start: 203 },
     { title: "The Details", src: "video/posey-details.mp4", poster: "video/posey-details.jpg", film: "poseyFilm", start: 99 },
-    { title: "The Celebration", src: "video/posey-dance.mp4", poster: "video/posey-dance.jpg", film: "poseyFilm", start: 477 }
+    { title: "The Vows", src: "video/percy-vows.mp4", poster: "video/percy-vows.jpg", film: "percyFilm", start: 128 }
   ],
 
   // Contact form: Web3Forms access key (public by design). Inquiries are emailed to the recipient set in the Web3Forms dashboard.
