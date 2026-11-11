@@ -17,7 +17,7 @@ window.OOF = {
   reel: [
     { title: "The Ceremony", src: "video/ray-ceremony.mp4", poster: "video/ray-ceremony.jpg", film: "rayFilm", start: 203 },
     { title: "The Details", src: "video/posey-details.mp4", poster: "video/posey-details.jpg", film: "poseyFilm", start: 99 },
-    { title: "The Vows", src: "video/percy-vows.mp4", poster: "video/percy-vows.jpg", film: "percyFilm", start: 128 }
+    { title: "The Vows", src: "video/percy-vows.mp4", poster: "video/percy-vows.jpg", film: "percyFilm", start: 70 }
   ],
 
   // Contact form: Web3Forms access key (public by design). Inquiries are emailed to the recipient set in the Web3Forms dashboard.
